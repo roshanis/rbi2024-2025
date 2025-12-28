@@ -152,7 +152,7 @@ export default function IndiaMap({
             <Geographies geography={INDIA_TOPO_URL}>
               {({ geographies }: any) =>
                 geographies.map((geo: any) => {
-                  const geoName = geo.properties.NAME_1 || geo.properties.name;
+                  const geoName = geo.properties.st_nm || geo.properties.NAME_1 || geo.properties.name;
                   const stateName = getStateName(geoName);
                   const value = dataMap.get(stateName);
                   const isHovered = hoveredState === stateName;
