@@ -1,0 +1,105 @@
+{
+  "datasets": [
+    {
+      "name": "gdp",
+      "title": "State Domestic Product (GSDP)",
+      "description": "Gross State Domestic Product at current prices (Rs Crore)",
+      "source": "RBI Handbook of Statistics on Indian States, 2024-25",
+      "year": "2023-24",
+      "unit": "Rs Crore",
+      "pdf": "",
+      "page_start": 1,
+      "page_end": 1,
+      "csv": "outputs/gdp.csv",
+      "columns": {
+        "state": { "source": ["state"] },
+        "gsdp": { "source": ["gsdp"] },
+        "growth": { "source": ["growth"] },
+        "perCapita": { "source": ["per capita"] }
+      },
+      "numeric_fields": ["gsdp", "growth", "perCapita"],
+      "national": {
+        "sum": { "totalGDP": "gsdp" },
+        "avg": { "avgGrowth": "growth", "avgPerCapita": "perCapita" }
+      },
+      "notes": "Set pdf/page range to the GSDP table and update columns if headers differ."
+    },
+    {
+      "name": "banking",
+      "title": "Banking Statistics",
+      "description": "State-wise bank branches, deposits, and credit",
+      "source": "RBI Handbook of Statistics on Indian States, 2024-25",
+      "year": "2024",
+      "pdf": "",
+      "page_start": 1,
+      "page_end": 1,
+      "csv": "outputs/banking.csv",
+      "columns": {
+        "state": { "source": ["state"] },
+        "branches": { "source": ["branches"] },
+        "deposits": { "source": ["deposits"] },
+        "credit": { "source": ["credit"] },
+        "cdRatio": { "source": ["cd ratio"] }
+      },
+      "numeric_fields": ["branches", "deposits", "credit", "cdRatio"],
+      "national": {
+        "sum": {
+          "totalBranches": "branches",
+          "totalDeposits": "deposits",
+          "totalCredit": "credit"
+        },
+        "avg": { "avgCDRatio": "cdRatio" }
+      },
+      "notes": "Set pdf/page range to the banking table and update columns if headers differ."
+    },
+    {
+      "name": "exports",
+      "title": "State-wise Exports",
+      "description": "State-wise export statistics",
+      "source": "RBI Handbook of Statistics on Indian States, 2024-25",
+      "year": "2023-24",
+      "unit": "Rs Crore",
+      "pdf": "",
+      "page_start": 1,
+      "page_end": 1,
+      "csv": "outputs/exports.csv",
+      "columns": {
+        "state": { "source": ["state"] },
+        "exports": { "source": ["exports"] },
+        "share": { "source": ["share"] }
+      },
+      "numeric_fields": ["exports", "share"],
+      "national": {
+        "sum": { "totalExports": "exports" },
+        "static": { "growthRate": 0 }
+      },
+      "notes": "Update growthRate in national.static and set pdf/page range for exports tables."
+    },
+    {
+      "name": "tourism",
+      "title": "Tourism Statistics",
+      "description": "State-wise domestic and foreign tourist visits",
+      "source": "RBI Handbook of Statistics on Indian States, 2024-25",
+      "year": "2023",
+      "pdf": "",
+      "page_start": 1,
+      "page_end": 1,
+      "csv": "outputs/tourism.csv",
+      "columns": {
+        "state": { "source": ["state"] },
+        "domestic": { "source": ["domestic"] },
+        "foreign": { "source": ["foreign"] },
+        "total": { "source": ["total"] }
+      },
+      "numeric_fields": ["domestic", "foreign", "total"],
+      "national": {
+        "sum": {
+          "totalDomestic": "domestic",
+          "totalForeign": "foreign",
+          "total": "total"
+        }
+      },
+      "notes": "Set pdf/page range to the tourism table and update columns if headers differ."
+    }
+  ]
+}

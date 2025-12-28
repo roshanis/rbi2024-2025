@@ -1,26 +1,179 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdfbf7;
+  --foreground: #0f172a;
+
+  /* RBI Brand Colors - Enhanced */
+  --rbi-blue: #003366;
+  --rbi-blue-light: #2c5282;
+  --rbi-blue-dark: #002147;
+
+  /* Indian Flag Inspired Accents - Vibrant */
+  --india-orange: #ff9933;
+  --india-green: #138808;
+  --gold: #fcc200;
+
+  /* UI Colors */
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --border: rgba(148, 163, 184, 0.2);
+
+  --font-display: "Fraunces", serif;
+  --font-body: "Source Sans 3", sans-serif;
+  --font-mono: "IBM Plex Mono", monospace;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-rbi-blue: var(--rbi-blue);
+  --color-rbi-blue-light: var(--rbi-blue-light);
+  --color-rbi-blue-dark: var(--rbi-blue-dark);
+  --color-india-orange: var(--india-orange);
+  --color-india-green: var(--india-green);
+  --font-sans: var(--font-body);
+  --font-mono: var(--font-mono);
+  --font-display: var(--font-display);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image:
+    radial-gradient(at 0% 0%, rgba(255, 153, 51, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, rgba(19, 136, 8, 0.15) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(0, 51, 102, 0.1) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, rgba(252, 194, 0, 0.1) 0px, transparent 50%);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.font-display {
+  font-family: var(--font-display);
+  letter-spacing: -0.025em;
+}
+
+.page-shell {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Glassmorphism Card Base */
+.surface-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.03),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.surface-card:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 15px -3px rgba(0, 0, 0, 0.08),
+    0 4px 6px -2px rgba(0, 0, 0, 0.04),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+/* Hero Section */
+.hero-panel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 32px;
+  background: linear-gradient(135deg, var(--rbi-blue) 0%, var(--rbi-blue-dark) 100%);
+  color: white;
+  box-shadow: 0 20px 40px -5px rgba(0, 51, 102, 0.4);
+}
+
+.hero-panel::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at top right, rgba(255, 153, 51, 0.2), transparent 40%),
+    radial-gradient(circle at bottom left, rgba(19, 136, 8, 0.2), transparent 40%);
+  pointer-events: none;
+}
+
+.reveal {
+  animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.reveal-delay-1 {
+  animation-delay: 0.1s;
+}
+
+.reveal-delay-2 {
+  animation-delay: 0.2s;
+}
+
+.reveal-delay-3 {
+  animation-delay: 0.3s;
+}
+
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.5);
+  border-radius: 20px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(156, 163, 175, 0.8);
+}
+
+
+/* Stat card gradient backgrounds */
+.stat-card-gdp {
+  background: linear-gradient(135deg, var(--rbi-blue) 0%, var(--rbi-blue-light) 100%);
+}
+
+.stat-card-exports {
+  background: linear-gradient(135deg, #b44b00 0%, var(--india-orange) 100%);
+}
+
+.stat-card-banking {
+  background: linear-gradient(135deg, #0f3b2f 0%, var(--india-green) 100%);
+}
+
+.stat-card-tourism {
+  background: linear-gradient(135deg, var(--rbi-blue-dark) 0%, #14b8a6 100%);
 }

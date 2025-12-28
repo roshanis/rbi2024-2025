@@ -1,0 +1,212 @@
+{
+  "title": "Gross State Domestic Product (Current Prices)",
+  "description": "Gross State Domestic Product at current prices (\u20b9 Crore)",
+  "source": "RBI Handbook of Statistics on Indian States, 2024-25",
+  "year": "2016-17",
+  "unit": "\u20b9 Crore",
+  "data": [
+    {
+      "state": "Maharashtra",
+      "gsdp": 2198185.15,
+      "growth": 11.8,
+      "perCapita": 163726
+    },
+    {
+      "state": "Uttar Pradesh",
+      "gsdp": 1329863.95,
+      "growth": 13.45,
+      "perCapita": 54564
+    },
+    {
+      "state": "Tamil Nadu",
+      "gsdp": 1302638.58,
+      "growth": 10.72,
+      "perCapita": 156595
+    },
+    {
+      "state": "Karnataka",
+      "gsdp": 1207607.72,
+      "growth": 15.54,
+      "perCapita": 169898
+    },
+    {
+      "state": "Gujarat",
+      "gsdp": 1167155.58,
+      "growth": 13.43,
+      "perCapita": 156295
+    },
+    {
+      "state": "West Bengal",
+      "gsdp": 872527.23,
+      "growth": 9.44,
+      "perCapita": 82291
+    },
+    {
+      "state": "Rajasthan",
+      "gsdp": 760587.27,
+      "growth": 11.61,
+      "perCapita": 91924
+    },
+    {
+      "state": "Andhra Pradesh",
+      "gsdp": 684415.87,
+      "growth": 13.27,
+      "perCapita": 120676
+    },
+    {
+      "state": "Telangana",
+      "gsdp": 658325.34,
+      "growth": 13.92,
+      "perCapita": 159395
+    },
+    {
+      "state": "Madhya Pradesh",
+      "gsdp": 649822.81,
+      "growth": 20.1,
+      "perCapita": 74324
+    },
+    {
+      "state": "Kerala",
+      "gsdp": 634886.4,
+      "growth": 12.97,
+      "perCapita": 166246
+    },
+    {
+      "state": "Delhi",
+      "gsdp": 616085.06,
+      "growth": 11.85,
+      "perCapita": 295558
+    },
+    {
+      "state": "Haryana",
+      "gsdp": 561424.17,
+      "growth": 13.3,
+      "perCapita": 184982
+    },
+    {
+      "state": "Punjab",
+      "gsdp": 426988.1,
+      "growth": 9.46,
+      "perCapita": 128780
+    },
+    {
+      "state": "Bihar",
+      "gsdp": 421051.5,
+      "growth": 13.31,
+      "perCapita": 34045
+    },
+    {
+      "state": "Odisha",
+      "gsdp": 392803.67,
+      "growth": 19.56,
+      "perCapita": 77507
+    },
+    {
+      "state": "Chhattisgarh",
+      "gsdp": 262801.75,
+      "growth": 16.72,
+      "perCapita": 83285
+    },
+    {
+      "state": "Assam",
+      "gsdp": 254382.36,
+      "growth": 11.59,
+      "perCapita": 66330
+    },
+    {
+      "state": "Jharkhand",
+      "gsdp": 236249.72,
+      "growth": 14.34,
+      "perCapita": 60018
+    },
+    {
+      "state": "Uttarakhand",
+      "gsdp": 195124.86,
+      "growth": 10.14,
+      "perCapita": 161752
+    },
+    {
+      "state": "Himachal Pradesh",
+      "gsdp": 125633.64,
+      "growth": 9.97,
+      "perCapita": 150290
+    },
+    {
+      "state": "Jammu and Kashmir",
+      "gsdp": 124848.0,
+      "growth": 6.55,
+      "perCapita": 78960
+    },
+    {
+      "state": "Goa",
+      "gsdp": 62976.31,
+      "growth": 14.39,
+      "perCapita": 378953
+    },
+    {
+      "state": "Tripura",
+      "gsdp": 39479.4,
+      "growth": 9.86,
+      "perCapita": 91596
+    },
+    {
+      "state": "Chandigarh",
+      "gsdp": 32426.66,
+      "growth": 10.77,
+      "perCapita": 252236
+    },
+    {
+      "state": "Puducherry",
+      "gsdp": 29572.66,
+      "growth": 11.11,
+      "perCapita": 187356
+    },
+    {
+      "state": "Meghalaya",
+      "gsdp": 27438.62,
+      "growth": 9.24,
+      "perCapita": 77585
+    },
+    {
+      "state": "Nagaland",
+      "gsdp": 21722.45,
+      "growth": 11.26,
+      "perCapita": 91347
+    },
+    {
+      "state": "Manipur",
+      "gsdp": 21293.89,
+      "growth": 9.03,
+      "perCapita": 59345
+    },
+    {
+      "state": "Sikkim",
+      "gsdp": 20687.19,
+      "growth": 14.71,
+      "perCapita": 280729
+    },
+    {
+      "state": "Arunachal Pradesh",
+      "gsdp": 19902.12,
+      "growth": 7.53,
+      "perCapita": 124129
+    },
+    {
+      "state": "Mizoram",
+      "gsdp": 17191.91,
+      "growth": 13.56,
+      "perCapita": 127107
+    },
+    {
+      "state": "Andaman and Nicobar Islands",
+      "gsdp": 6835.87,
+      "growth": 13.33,
+      "perCapita": 153904
+    }
+  ],
+  "national": {
+    "totalGDP": 15382935.81,
+    "avgGrowth": 12.36,
+    "avgPerCapita": 137628.12
+  }
+}

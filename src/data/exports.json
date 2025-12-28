@@ -1,0 +1,193 @@
+{
+  "title": "State-wise Exports",
+  "description": "State-wise exports (approx \u20b9 Crore from USD millions, USD@83)",
+  "source": "RBI Handbook of Statistics on Indian States, 2024-25",
+  "year": "2023-24",
+  "unit": "\u20b9 Crore (approx)",
+  "data": [
+    {
+      "state": "Gujarat",
+      "exports": 1115544.9,
+      "share": 31.33
+    },
+    {
+      "state": "Maharashtra",
+      "exports": 557859.6,
+      "share": 15.67
+    },
+    {
+      "state": "Tamil Nadu",
+      "exports": 361514.8,
+      "share": 10.15
+    },
+    {
+      "state": "Karnataka",
+      "exports": 221045.6,
+      "share": 6.21
+    },
+    {
+      "state": "Uttar Pradesh",
+      "exports": 170755.9,
+      "share": 4.8
+    },
+    {
+      "state": "Andhra Pradesh",
+      "exports": 164008.0,
+      "share": 4.61
+    },
+    {
+      "state": "Haryana",
+      "exports": 146544.8,
+      "share": 4.12
+    },
+    {
+      "state": "Telangana",
+      "exports": 116415.8,
+      "share": 3.27
+    },
+    {
+      "state": "Odisha",
+      "exports": 99035.6,
+      "share": 2.78
+    },
+    {
+      "state": "West Bengal",
+      "exports": 96985.5,
+      "share": 2.72
+    },
+    {
+      "state": "Delhi",
+      "exports": 84917.3,
+      "share": 2.39
+    },
+    {
+      "state": "Rajasthan",
+      "exports": 83904.7,
+      "share": 2.36
+    },
+    {
+      "state": "Kerala",
+      "exports": 67835.9,
+      "share": 1.91
+    },
+    {
+      "state": "Madhya Pradesh",
+      "exports": 65404.0,
+      "share": 1.84
+    },
+    {
+      "state": "Punjab",
+      "exports": 55983.5,
+      "share": 1.57
+    },
+    {
+      "state": "Dadra and Nagar Haveli and Daman and Diu",
+      "exports": 38204.9,
+      "share": 1.07
+    },
+    {
+      "state": "Goa",
+      "exports": 19853.6,
+      "share": 0.56
+    },
+    {
+      "state": "Himachal Pradesh",
+      "exports": 19231.1,
+      "share": 0.54
+    },
+    {
+      "state": "Bihar",
+      "exports": 17039.9,
+      "share": 0.48
+    },
+    {
+      "state": "Chhattisgarh",
+      "exports": 16741.1,
+      "share": 0.47
+    },
+    {
+      "state": "Jharkhand",
+      "exports": 15753.4,
+      "share": 0.44
+    },
+    {
+      "state": "Uttarakhand",
+      "exports": 14981.5,
+      "share": 0.42
+    },
+    {
+      "state": "Puducherry",
+      "exports": 4291.1,
+      "share": 0.12
+    },
+    {
+      "state": "Assam",
+      "exports": 3668.6,
+      "share": 0.1
+    },
+    {
+      "state": "Jammu and Kashmir",
+      "exports": 1601.9,
+      "share": 0.04
+    },
+    {
+      "state": "Chandigarh",
+      "exports": 904.7,
+      "share": 0.03
+    },
+    {
+      "state": "Sikkim",
+      "exports": 141.1,
+      "share": 0.0
+    },
+    {
+      "state": "Meghalaya",
+      "exports": 83.0,
+      "share": 0.0
+    },
+    {
+      "state": "Arunachal Pradesh",
+      "exports": 24.9,
+      "share": 0.0
+    },
+    {
+      "state": "Tripura",
+      "exports": 16.6,
+      "share": 0.0
+    },
+    {
+      "state": "Nagaland",
+      "exports": 8.3,
+      "share": 0.0
+    },
+    {
+      "state": "Andaman and Nicobar Islands",
+      "exports": 8.3,
+      "share": 0.0
+    },
+    {
+      "state": "Manipur",
+      "exports": 0.0,
+      "share": 0.0
+    },
+    {
+      "state": "Mizoram",
+      "exports": 0.0,
+      "share": 0.0
+    },
+    {
+      "state": "Lakshadweep",
+      "exports": 0.0,
+      "share": 0.0
+    },
+    {
+      "state": "Ladakh",
+      "exports": 0.0,
+      "share": 0.0
+    }
+  ],
+  "national": {
+    "totalExports": 3560309.9,
+    "growthRate": -1.75
+  }
+}

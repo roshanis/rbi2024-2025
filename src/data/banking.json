@@ -1,0 +1,252 @@
+{
+  "title": "Banking Statistics (Scheduled Commercial Banks)",
+  "description": "State-wise number of offices, deposits, and credit (As at end-March)",
+  "source": "RBI Handbook of Statistics on Indian States, 2024-25",
+  "year": "2014",
+  "data": [
+    {
+      "state": "Maharashtra",
+      "branches": 11203,
+      "deposits": 2028845.0,
+      "credit": 1821186.0,
+      "cdRatio": 81.3
+    },
+    {
+      "state": "Delhi",
+      "branches": 3255,
+      "deposits": 814665.0,
+      "credit": 844416.0,
+      "cdRatio": 105.1
+    },
+    {
+      "state": "Uttar Pradesh",
+      "branches": 14694,
+      "deposits": 597679.0,
+      "credit": 266630.0,
+      "cdRatio": 48.0
+    },
+    {
+      "state": "Karnataka",
+      "branches": 8625,
+      "deposits": 536909.0,
+      "credit": 381438.0,
+      "cdRatio": 76.5
+    },
+    {
+      "state": "Tamil Nadu",
+      "branches": 9090,
+      "deposits": 499973.0,
+      "credit": 608742.0,
+      "cdRatio": 120.6
+    },
+    {
+      "state": "West Bengal",
+      "branches": 6931,
+      "deposits": 480108.0,
+      "credit": 295914.0,
+      "cdRatio": 63.9
+    },
+    {
+      "state": "Andhra Pradesh",
+      "branches": 9900,
+      "deposits": 440999.0,
+      "credit": 490843.0,
+      "cdRatio": 115.9
+    },
+    {
+      "state": "Gujarat",
+      "branches": 6743,
+      "deposits": 414792.0,
+      "credit": 309819.0,
+      "cdRatio": 81.0
+    },
+    {
+      "state": "Kerala",
+      "branches": 5858,
+      "deposits": 281593.0,
+      "credit": 190557.0,
+      "cdRatio": 67.8
+    },
+    {
+      "state": "Punjab",
+      "branches": 5547,
+      "deposits": 230021.0,
+      "credit": 182003.0,
+      "cdRatio": 81.3
+    },
+    {
+      "state": "Madhya Pradesh",
+      "branches": 5601,
+      "deposits": 224910.0,
+      "credit": 135788.0,
+      "cdRatio": 63.3
+    },
+    {
+      "state": "Rajasthan",
+      "branches": 5907,
+      "deposits": 201257.0,
+      "credit": 175331.0,
+      "cdRatio": 91.4
+    },
+    {
+      "state": "Haryana",
+      "branches": 3962,
+      "deposits": 193315.0,
+      "credit": 150886.0,
+      "cdRatio": 88.5
+    },
+    {
+      "state": "Bihar",
+      "branches": 5696,
+      "deposits": 190434.0,
+      "credit": 62462.0,
+      "cdRatio": 34.8
+    },
+    {
+      "state": "Odisha",
+      "branches": 3995,
+      "deposits": 164629.0,
+      "credit": 73343.0,
+      "cdRatio": 46.2
+    },
+    {
+      "state": "Jharkhand",
+      "branches": 2582,
+      "deposits": 120341.0,
+      "credit": 38248.0,
+      "cdRatio": 33.0
+    },
+    {
+      "state": "Chhattisgarh",
+      "branches": 2062,
+      "deposits": 88500.0,
+      "credit": 52617.0,
+      "cdRatio": 61.5
+    },
+    {
+      "state": "Assam",
+      "branches": 1945,
+      "deposits": 83840.0,
+      "credit": 31630.0,
+      "cdRatio": 39.9
+    },
+    {
+      "state": "Uttarakhand",
+      "branches": 1739,
+      "deposits": 76009.0,
+      "credit": 27094.0,
+      "cdRatio": 36.7
+    },
+    {
+      "state": "Jammu and Kashmir",
+      "branches": 1535,
+      "deposits": 66557.0,
+      "credit": 26716.0,
+      "cdRatio": 40.4
+    },
+    {
+      "state": "Himachal Pradesh",
+      "branches": 1386,
+      "deposits": 51993.0,
+      "credit": 18598.0,
+      "cdRatio": 37.8
+    },
+    {
+      "state": "Chandigarh",
+      "branches": 408,
+      "deposits": 48262.0,
+      "credit": 57897.0,
+      "cdRatio": 122.4
+    },
+    {
+      "state": "Goa",
+      "branches": 632,
+      "deposits": 45125.0,
+      "credit": 12939.0,
+      "cdRatio": 30.2
+    },
+    {
+      "state": "Meghalaya",
+      "branches": 286,
+      "deposits": 14583.0,
+      "credit": 3997.0,
+      "cdRatio": 28.6
+    },
+    {
+      "state": "Tripura",
+      "branches": 354,
+      "deposits": 13468.0,
+      "credit": 4365.0,
+      "cdRatio": 32.5
+    },
+    {
+      "state": "Puducherry",
+      "branches": 205,
+      "deposits": 9394.0,
+      "credit": 7314.0,
+      "cdRatio": 80.8
+    },
+    {
+      "state": "Nagaland",
+      "branches": 141,
+      "deposits": 6544.0,
+      "credit": 2031.0,
+      "cdRatio": 32.5
+    },
+    {
+      "state": "Dadra and Nagar Haveli and Daman and Diu",
+      "branches": 95,
+      "deposits": 5221.0,
+      "credit": 1571.0,
+      "cdRatio": 86.9
+    },
+    {
+      "state": "Sikkim",
+      "branches": 113,
+      "deposits": 5152.0,
+      "credit": 1364.0,
+      "cdRatio": 37.3
+    },
+    {
+      "state": "Manipur",
+      "branches": 134,
+      "deposits": 5063.0,
+      "credit": 1701.0,
+      "cdRatio": 34.0
+    },
+    {
+      "state": "Mizoram",
+      "branches": 141,
+      "deposits": 4715.0,
+      "credit": 1784.0,
+      "cdRatio": 40.5
+    },
+    {
+      "state": "Andaman and Nicobar Islands",
+      "branches": 59,
+      "deposits": 2591.0,
+      "credit": 1014.0,
+      "cdRatio": 38.5
+    },
+    {
+      "state": "Lakshadweep",
+      "branches": 13,
+      "deposits": 711.0,
+      "credit": 61.0,
+      "cdRatio": 8.6
+    },
+    {
+      "state": "Arunachal Pradesh",
+      "branches": 128,
+      "deposits": null,
+      "credit": null,
+      "cdRatio": 24.8
+    }
+  ],
+  "national": {
+    "totalBranches": 120965,
+    "totalDeposits": 7948198.0,
+    "totalCredit": 6280299.0,
+    "avgCDRatio": 59.19
+  }
+}

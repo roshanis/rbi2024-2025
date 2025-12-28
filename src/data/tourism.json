@@ -1,0 +1,223 @@
+{
+  "title": "Tourism Statistics",
+  "description": "State-wise domestic and foreign tourist visits",
+  "source": "RBI Handbook of Statistics on Indian States, 2024-25",
+  "year": "2016",
+  "data": [
+    {
+      "state": "Tamil Nadu",
+      "domestic": 343810000,
+      "foreign": 4722000,
+      "total": 348532000
+    },
+    {
+      "state": "Uttar Pradesh",
+      "domestic": 213540000,
+      "foreign": 3156800,
+      "total": 216696800
+    },
+    {
+      "state": "Andhra Pradesh",
+      "domestic": 153160000,
+      "foreign": 341800,
+      "total": 153501800
+    },
+    {
+      "state": "Madhya Pradesh",
+      "domestic": 150490000,
+      "foreign": 363200,
+      "total": 150853200
+    },
+    {
+      "state": "Karnataka",
+      "domestic": 129760000,
+      "foreign": 461800,
+      "total": 130221800
+    },
+    {
+      "state": "Maharashtra",
+      "domestic": 116520000,
+      "foreign": 4670000,
+      "total": 121190000
+    },
+    {
+      "state": "Telangana",
+      "domestic": 95160000,
+      "foreign": 166600,
+      "total": 95326600
+    },
+    {
+      "state": "West Bengal",
+      "domestic": 74460000,
+      "foreign": 1528700,
+      "total": 75988700
+    },
+    {
+      "state": "Rajasthan",
+      "domestic": 41500000,
+      "foreign": 1513700,
+      "total": 43013700
+    },
+    {
+      "state": "Gujarat",
+      "domestic": 42250000,
+      "foreign": 343800,
+      "total": 42593800
+    },
+    {
+      "state": "Punjab",
+      "domestic": 38700000,
+      "foreign": 659700,
+      "total": 39359700
+    },
+    {
+      "state": "Jharkhand",
+      "domestic": 33390000,
+      "foreign": 169400,
+      "total": 33559400
+    },
+    {
+      "state": "Delhi",
+      "domestic": 28460000,
+      "foreign": 2520100,
+      "total": 30980100
+    },
+    {
+      "state": "Uttarakhand",
+      "domestic": 30510000,
+      "foreign": 117100,
+      "total": 30627100
+    },
+    {
+      "state": "Bihar",
+      "domestic": 28520000,
+      "foreign": 1010500,
+      "total": 29530500
+    },
+    {
+      "state": "Himachal Pradesh",
+      "domestic": 18000000,
+      "foreign": 452800,
+      "total": 18452800
+    },
+    {
+      "state": "Chhattisgarh",
+      "domestic": 16530000,
+      "foreign": 9200,
+      "total": 16539200
+    },
+    {
+      "state": "Kerala",
+      "domestic": 13170000,
+      "foreign": 1038400,
+      "total": 14208400
+    },
+    {
+      "state": "Odisha",
+      "domestic": 12840000,
+      "foreign": 76400,
+      "total": 12916400
+    },
+    {
+      "state": "Jammu and Kashmir",
+      "domestic": 9410000,
+      "foreign": 63200,
+      "total": 9473200
+    },
+    {
+      "state": "Haryana",
+      "domestic": 7380000,
+      "foreign": 331300,
+      "total": 7711300
+    },
+    {
+      "state": "Goa",
+      "domestic": 5650000,
+      "foreign": 680700,
+      "total": 6330700
+    },
+    {
+      "state": "Assam",
+      "domestic": 5160000,
+      "foreign": 19500,
+      "total": 5179500
+    },
+    {
+      "state": "Puducherry",
+      "domestic": 1400000,
+      "foreign": 117400,
+      "total": 1517400
+    },
+    {
+      "state": "Dadra and Nagar Haveli and Daman and Diu",
+      "domestic": 1420000,
+      "foreign": 7600,
+      "total": 1427600
+    },
+    {
+      "state": "Chandigarh",
+      "domestic": 1180000,
+      "foreign": 31500,
+      "total": 1211500
+    },
+    {
+      "state": "Meghalaya",
+      "domestic": 830000,
+      "foreign": 8500,
+      "total": 838500
+    },
+    {
+      "state": "Sikkim",
+      "domestic": 750000,
+      "foreign": 66000,
+      "total": 816000
+    },
+    {
+      "state": "Tripura",
+      "domestic": 370000,
+      "foreign": 36800,
+      "total": 406800
+    },
+    {
+      "state": "Arunachal Pradesh",
+      "domestic": 390000,
+      "foreign": 6600,
+      "total": 396600
+    },
+    {
+      "state": "Andaman and Nicobar Islands",
+      "domestic": 380000,
+      "foreign": 15500,
+      "total": 395500
+    },
+    {
+      "state": "Manipur",
+      "domestic": 150000,
+      "foreign": 3100,
+      "total": 153100
+    },
+    {
+      "state": "Mizoram",
+      "domestic": 70000,
+      "foreign": 900,
+      "total": 70900
+    },
+    {
+      "state": "Nagaland",
+      "domestic": 60000,
+      "foreign": 3300,
+      "total": 63300
+    },
+    {
+      "state": "Lakshadweep",
+      "domestic": 10000,
+      "foreign": 800,
+      "total": 10800
+    }
+  ],
+  "national": {
+    "totalDomestic": 1615380000,
+    "totalForeign": 24714700,
+    "total": 1640094700
+  }
+}
