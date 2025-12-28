@@ -57,10 +57,10 @@ export default function BankingPage() {
   }, [filteredData, selectedMetric]);
 
   const highlights = useMemo(() => {
-    const byDeposits = [...bankingData.data].sort((a, b) => b.deposits - a.deposits)[0];
-    const byBranches = [...bankingData.data].sort((a, b) => b.branches - a.branches)[0];
-    const byCredit = [...bankingData.data].sort((a, b) => b.credit - a.credit)[0];
-    const byCdRatio = [...bankingData.data].sort((a, b) => b.cdRatio - a.cdRatio)[0];
+    const byDeposits = [...bankingData.data].sort((a, b) => (b.deposits ?? 0) - (a.deposits ?? 0))[0];
+    const byBranches = [...bankingData.data].sort((a, b) => (b.branches ?? 0) - (a.branches ?? 0))[0];
+    const byCredit = [...bankingData.data].sort((a, b) => (b.credit ?? 0) - (a.credit ?? 0))[0];
+    const byCdRatio = [...bankingData.data].sort((a, b) => (b.cdRatio ?? 0) - (a.cdRatio ?? 0))[0];
     return { byDeposits, byBranches, byCredit, byCdRatio };
   }, []);
 
@@ -145,8 +145,8 @@ export default function BankingPage() {
                     key={key}
                     onClick={() => setSelectedMetric(key)}
                     className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${selectedMetric === key
-                        ? "bg-[#138808] text-white"
-                        : "bg-white/70 text-slate-700 hover:bg-white"
+                      ? "bg-[#138808] text-white"
+                      : "bg-white/70 text-slate-700 hover:bg-white"
                       }`}
                   >
                     {label}
@@ -166,8 +166,8 @@ export default function BankingPage() {
                     key={region}
                     onClick={() => setRegionFilter(region)}
                     className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${regionFilter === region
-                        ? "bg-[#0b2d52] text-white"
-                        : "bg-white/70 text-slate-700 hover:bg-white"
+                      ? "bg-[#0b2d52] text-white"
+                      : "bg-white/70 text-slate-700 hover:bg-white"
                       }`}
                   >
                     {region}
@@ -186,8 +186,8 @@ export default function BankingPage() {
               <button
                 onClick={() => setViewMode("chart")}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${viewMode === "chart"
-                    ? "bg-white text-slate-900 shadow-sm"
-                    : "text-slate-600 hover:text-slate-900"
+                  ? "bg-white text-slate-900 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
                   }`}
               >
                 Chart
@@ -195,8 +195,8 @@ export default function BankingPage() {
               <button
                 onClick={() => setViewMode("table")}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${viewMode === "table"
-                    ? "bg-white text-slate-900 shadow-sm"
-                    : "text-slate-600 hover:text-slate-900"
+                  ? "bg-white text-slate-900 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
                   }`}
               >
                 Table
