@@ -51,7 +51,7 @@ export default function BankingPage() {
       .slice(0, 20)
       .map((d) => ({
         name: d.state.length > 15 ? d.state.substring(0, 12) + "..." : d.state,
-        value: d[selectedMetric],
+        value: d[selectedMetric] ?? 0,
         fullName: d.state,
       }));
   }, [filteredData, selectedMetric]);
@@ -119,12 +119,12 @@ export default function BankingPage() {
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Top deposits</p>
               <p className="font-semibold text-slate-900">{highlights.byDeposits.state}</p>
-              <p className="text-sm text-slate-500">{formatCurrency(highlights.byDeposits.deposits)}</p>
+              <p className="text-sm text-slate-500">{formatCurrency(highlights.byDeposits.deposits ?? 0)}</p>
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Top branches</p>
               <p className="font-semibold text-slate-900">{highlights.byBranches.state}</p>
-              <p className="text-sm text-slate-500">{formatIndianNumber(highlights.byBranches.branches)}</p>
+              <p className="text-sm text-slate-500">{formatIndianNumber(highlights.byBranches.branches ?? 0)}</p>
             </div>
           </div>
         </div>
@@ -240,22 +240,22 @@ export default function BankingPage() {
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Highest deposits</p>
             <p className="font-semibold text-slate-900">{highlights.byDeposits.state}</p>
-            <p>{formatCurrency(highlights.byDeposits.deposits)}</p>
+            <p>{formatCurrency(highlights.byDeposits.deposits ?? 0)}</p>
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Most branches</p>
             <p className="font-semibold text-slate-900">{highlights.byBranches.state}</p>
-            <p>{formatIndianNumber(highlights.byBranches.branches)}</p>
+            <p>{formatIndianNumber(highlights.byBranches.branches ?? 0)}</p>
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Highest credit</p>
             <p className="font-semibold text-slate-900">{highlights.byCredit.state}</p>
-            <p>{formatCurrency(highlights.byCredit.credit)}</p>
+            <p>{formatCurrency(highlights.byCredit.credit ?? 0)}</p>
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Best CD ratio</p>
             <p className="font-semibold text-slate-900">{highlights.byCdRatio.state}</p>
-            <p>{formatPercentage(highlights.byCdRatio.cdRatio)}</p>
+            <p>{formatPercentage(highlights.byCdRatio.cdRatio ?? 0)}</p>
           </div>
         </div>
       </div>

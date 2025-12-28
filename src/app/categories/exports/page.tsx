@@ -39,7 +39,7 @@ export default function ExportsPage() {
 
   const chartData = useMemo(() => {
     return [...filteredData]
-      .sort((a, b) => b.exports - a.exports)
+      .sort((a, b) => (b.exports ?? 0) - (a.exports ?? 0))
       .slice(0, 15)
       .map((d) => ({
         name: d.state.length > 15 ? d.state.substring(0, 12) + "..." : d.state,
@@ -48,24 +48,24 @@ export default function ExportsPage() {
   }, [filteredData]);
 
   const pieData = useMemo(() => {
-    const sorted = [...exportsData.data].sort((a, b) => b.exports - a.exports);
+    const sorted = [...exportsData.data].sort((a, b) => (b.exports ?? 0) - (a.exports ?? 0));
     const top5 = sorted.slice(0, 5);
     const othersTotal = sorted.slice(5).reduce((sum, d) => sum + d.exports, 0);
 
     return [
-      ...top5.map((d) => ({ name: d.state, value: d.exports })),
+      ...top5.map((d) => ({ name: d.state, value: d.exports ?? 0 })),
       { name: "Others", value: othersTotal },
     ];
   }, []);
 
   const highlights = useMemo(() => {
-    const sorted = [...exportsData.data].sort((a, b) => b.exports - a.exports);
+    const sorted = [...exportsData.data].sort((a, b) => (b.exports ?? 0) - (a.exports ?? 0));
     const topState = sorted[0];
     const lowState = sorted[sorted.length - 1];
     const regionTotals = new Map<string, number>();
     exportsData.data.forEach((entry) => {
       const region = stateRegionMap.get(entry.state) || "Unknown";
-      regionTotals.set(region, (regionTotals.get(region) || 0) + entry.exports);
+      regionTotals.set(region, (regionTotals.get(region) || 0) + (entry.exports ?? 0));
     });
     const topRegion = [...regionTotals.entries()].sort((a, b) => b[1] - a[1])[0];
     return { topState, lowState, topRegion };
@@ -147,11 +147,10 @@ export default function ExportsPage() {
                 <button
                   key={region}
                   onClick={() => setRegionFilter(region)}
-                  className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                    regionFilter === region
-                      ? "bg-[#b44b00] text-white"
-                      : "bg-white/70 text-slate-700 hover:bg-white"
-                  }`}
+                  className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${regionFilter === region
+                    ? "bg-[#b44b00] text-white"
+                    : "bg-white/70 text-slate-700 hover:bg-white"
+                    }`}
                 >
                   {region}
                 </button>
@@ -166,31 +165,28 @@ export default function ExportsPage() {
             <div className="flex gap-1 bg-white/70 rounded-full p-1 border border-slate-200">
               <button
                 onClick={() => setViewMode("chart")}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                  viewMode === "chart"
-                    ? "bg-white text-slate-900 shadow-sm"
-                    : "text-slate-600 hover:text-slate-900"
-                }`}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${viewMode === "chart"
+                  ? "bg-white text-slate-900 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
+                  }`}
               >
                 Bar
               </button>
               <button
                 onClick={() => setViewMode("pie")}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                  viewMode === "pie"
-                    ? "bg-white text-slate-900 shadow-sm"
-                    : "text-slate-600 hover:text-slate-900"
-                }`}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${viewMode === "pie"
+                  ? "bg-white text-slate-900 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
+                  }`}
               >
                 Pie
               </button>
               <button
                 onClick={() => setViewMode("table")}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                  viewMode === "table"
-                    ? "bg-white text-slate-900 shadow-sm"
-                    : "text-slate-600 hover:text-slate-900"
-                }`}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${viewMode === "table"
+                  ? "bg-white text-slate-900 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
+                  }`}
               >
                 Table
               </button>

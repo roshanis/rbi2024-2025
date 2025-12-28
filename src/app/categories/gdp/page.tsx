@@ -44,15 +44,15 @@ export default function GDPPage() {
       .sort((a, b) => b.gsdp - a.gsdp)
       .map((d) => ({
         name: d.state.length > 15 ? d.state.substring(0, 12) + "..." : d.state,
-        value: d.gsdp,
+        value: d.gsdp ?? 0,
         fullName: d.state,
       }));
   }, [filteredData]);
 
   const highlights = useMemo(() => {
-    const sortedByGDP = [...gdpData.data].sort((a, b) => b.gsdp - a.gsdp);
-    const sortedByGrowth = [...gdpData.data].sort((a, b) => b.growth - a.growth);
-    const sortedByPerCapita = [...gdpData.data].sort((a, b) => b.perCapita - a.perCapita);
+    const sortedByGDP = [...gdpData.data].sort((a, b) => (b.gsdp ?? 0) - (a.gsdp ?? 0));
+    const sortedByGrowth = [...gdpData.data].sort((a, b) => (b.growth ?? 0) - (a.growth ?? 0));
+    const sortedByPerCapita = [...gdpData.data].sort((a, b) => (b.perCapita ?? 0) - (a.perCapita ?? 0));
     return {
       topGDP: sortedByGDP[0],
       lowGDP: sortedByGDP[sortedByGDP.length - 1],
@@ -115,12 +115,12 @@ export default function GDPPage() {
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Largest GDP</p>
               <p className="font-semibold text-slate-900">{highlights.topGDP.state}</p>
-              <p className="text-sm text-slate-500">{formatCurrency(highlights.topGDP.gsdp)}</p>
+              <p className="text-sm text-slate-500">{formatCurrency(highlights.topGDP.gsdp ?? 0)}</p>
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Fastest growth</p>
               <p className="font-semibold text-slate-900">{highlights.topGrowth.state}</p>
-              <p className="text-sm text-slate-500">{formatPercentage(highlights.topGrowth.growth)}</p>
+              <p className="text-sm text-slate-500">{formatPercentage(highlights.topGrowth.growth ?? 0)}</p>
             </div>
           </div>
         </div>
@@ -139,11 +139,10 @@ export default function GDPPage() {
                 <button
                   key={region}
                   onClick={() => setRegionFilter(region)}
-                  className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                    regionFilter === region
-                      ? "bg-[#0b2d52] text-white"
-                      : "bg-white/70 text-slate-700 hover:bg-white"
-                  }`}
+                  className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${regionFilter === region
+                    ? "bg-[#0b2d52] text-white"
+                    : "bg-white/70 text-slate-700 hover:bg-white"
+                    }`}
                 >
                   {region}
                 </button>
@@ -159,21 +158,19 @@ export default function GDPPage() {
             <div className="flex gap-1 bg-white/70 rounded-full p-1 border border-slate-200">
               <button
                 onClick={() => setViewMode("chart")}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                  viewMode === "chart"
-                    ? "bg-white text-slate-900 shadow-sm"
-                    : "text-slate-600 hover:text-slate-900"
-                }`}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${viewMode === "chart"
+                  ? "bg-white text-slate-900 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
+                  }`}
               >
                 Chart
               </button>
               <button
                 onClick={() => setViewMode("table")}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                  viewMode === "table"
-                    ? "bg-white text-slate-900 shadow-sm"
-                    : "text-slate-600 hover:text-slate-900"
-                }`}
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${viewMode === "table"
+                  ? "bg-white text-slate-900 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
+                  }`}
               >
                 Table
               </button>
@@ -212,22 +209,22 @@ export default function GDPPage() {
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Largest GDP</p>
             <p className="font-semibold text-slate-900">{highlights.topGDP.state}</p>
-            <p>{formatCurrency(highlights.topGDP.gsdp)}</p>
+            <p>{formatCurrency(highlights.topGDP.gsdp ?? 0)}</p>
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Fastest growth</p>
             <p className="font-semibold text-slate-900">{highlights.topGrowth.state}</p>
-            <p>{formatPercentage(highlights.topGrowth.growth)}</p>
+            <p>{formatPercentage(highlights.topGrowth.growth ?? 0)}</p>
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Top per capita</p>
             <p className="font-semibold text-slate-900">{highlights.topPerCapita.state}</p>
-            <p>₹{highlights.topPerCapita.perCapita.toLocaleString()}</p>
+            <p>₹{(highlights.topPerCapita.perCapita ?? 0).toLocaleString()}</p>
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Lowest GDP</p>
             <p className="font-semibold text-slate-900">{highlights.lowGDP.state}</p>
-            <p>{formatCurrency(highlights.lowGDP.gsdp)}</p>
+            <p>{formatCurrency(highlights.lowGDP.gsdp ?? 0)}</p>
           </div>
         </div>
       </div>

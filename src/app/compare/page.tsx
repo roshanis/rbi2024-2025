@@ -11,6 +11,7 @@ import ExportButton from "@/components/ui/ExportButton";
 import { formatCurrency, formatIndianNumber, formatPercentage } from "@/lib/formatters";
 
 interface StateMetrics {
+  [key: string]: string | number;
   name: string;
   gdp: number;
   gdpGrowth: number;
@@ -48,13 +49,13 @@ export default function ComparePage() {
           gdpGrowth: gdp.growth,
           perCapita: gdp.perCapita,
           exports: exports.exports,
-          exportShare: exports.share,
-          branches: banking.branches,
-          deposits: banking.deposits,
-          credit: banking.credit,
-          cdRatio: banking.cdRatio,
-          tourists: tourism.total,
-          foreignTourists: tourism.foreign,
+          exportShare: exports.share ?? 0,
+          branches: banking.branches ?? 0,
+          deposits: banking.deposits ?? 0,
+          credit: banking.credit ?? 0,
+          cdRatio: banking.cdRatio ?? 0,
+          tourists: tourism.total ?? 0,
+          foreignTourists: tourism.foreign ?? 0,
         });
       }
     });
@@ -191,11 +192,10 @@ export default function ComparePage() {
                 key={state.code}
                 onClick={() => handleStateToggle(state.name)}
                 disabled={!isSelected && selectedStates.length >= 4}
-                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${
-                  isSelected
-                    ? "text-white"
-                    : "bg-white/70 text-slate-700 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed"
-                }`}
+                className={`px-3 py-1.5 rounded-lg text-sm font-medium transition-colors ${isSelected
+                  ? "text-white"
+                  : "bg-white/70 text-slate-700 hover:bg-white disabled:opacity-50 disabled:cursor-not-allowed"
+                  }`}
                 style={isSelected ? { backgroundColor: stateColors[colorIndex] } : {}}
               >
                 {state.name}

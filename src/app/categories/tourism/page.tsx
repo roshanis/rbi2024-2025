@@ -55,9 +55,9 @@ export default function TourismPage() {
   }, [filteredData, selectedMetric]);
 
   const highlights = useMemo(() => {
-    const byTotal = [...tourismData.data].sort((a, b) => b.total - a.total)[0];
-    const byDomestic = [...tourismData.data].sort((a, b) => b.domestic - a.domestic)[0];
-    const byForeign = [...tourismData.data].sort((a, b) => b.foreign - a.foreign)[0];
+    const byTotal = [...tourismData.data].sort((a, b) => (b.total ?? 0) - (a.total ?? 0))[0];
+    const byDomestic = [...tourismData.data].sort((a, b) => (b.domestic ?? 0) - (a.domestic ?? 0))[0];
+    const byForeign = [...tourismData.data].sort((a, b) => (b.foreign ?? 0) - (a.foreign ?? 0))[0];
     return { byTotal, byDomestic, byForeign };
   }, []);
 
@@ -114,12 +114,12 @@ export default function TourismPage() {
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Top total</p>
               <p className="font-semibold text-slate-900">{highlights.byTotal.state}</p>
-              <p className="text-sm text-slate-500">{formatIndianNumber(highlights.byTotal.total)}</p>
+              <p className="text-sm text-slate-500">{formatIndianNumber(highlights.byTotal.total ?? 0)}</p>
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Top foreign</p>
               <p className="font-semibold text-slate-900">{highlights.byForeign.state}</p>
-              <p className="text-sm text-slate-500">{formatIndianNumber(highlights.byForeign.foreign)}</p>
+              <p className="text-sm text-slate-500">{formatIndianNumber(highlights.byForeign.foreign ?? 0)}</p>
             </div>
           </div>
         </div>
@@ -140,8 +140,8 @@ export default function TourismPage() {
                     key={key}
                     onClick={() => setSelectedMetric(key)}
                     className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${selectedMetric === key
-                        ? "bg-[#6366f1] text-white"
-                        : "bg-white/70 text-slate-700 hover:bg-white"
+                      ? "bg-[#6366f1] text-white"
+                      : "bg-white/70 text-slate-700 hover:bg-white"
                       }`}
                   >
                     {label}
@@ -161,8 +161,8 @@ export default function TourismPage() {
                     key={region}
                     onClick={() => setRegionFilter(region)}
                     className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${regionFilter === region
-                        ? "bg-[#0b2d52] text-white"
-                        : "bg-white/70 text-slate-700 hover:bg-white"
+                      ? "bg-[#0b2d52] text-white"
+                      : "bg-white/70 text-slate-700 hover:bg-white"
                       }`}
                   >
                     {region}
@@ -180,8 +180,8 @@ export default function TourismPage() {
               <button
                 onClick={() => setViewMode("chart")}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${viewMode === "chart"
-                    ? "bg-white text-slate-900 shadow-sm"
-                    : "text-slate-600 hover:text-slate-900"
+                  ? "bg-white text-slate-900 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
                   }`}
               >
                 Chart
@@ -189,8 +189,8 @@ export default function TourismPage() {
               <button
                 onClick={() => setViewMode("table")}
                 className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${viewMode === "table"
-                    ? "bg-white text-slate-900 shadow-sm"
-                    : "text-slate-600 hover:text-slate-900"
+                  ? "bg-white text-slate-900 shadow-sm"
+                  : "text-slate-600 hover:text-slate-900"
                   }`}
               >
                 Table
@@ -232,17 +232,17 @@ export default function TourismPage() {
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Most visits</p>
             <p className="font-semibold text-slate-900">{highlights.byTotal.state}</p>
-            <p>{formatIndianNumber(highlights.byTotal.total)}</p>
+            <p>{formatIndianNumber(highlights.byTotal.total ?? 0)}</p>
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Domestic leader</p>
             <p className="font-semibold text-slate-900">{highlights.byDomestic.state}</p>
-            <p>{formatIndianNumber(highlights.byDomestic.domestic)}</p>
+            <p>{formatIndianNumber(highlights.byDomestic.domestic ?? 0)}</p>
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Foreign leader</p>
             <p className="font-semibold text-slate-900">{highlights.byForeign.state}</p>
-            <p>{formatIndianNumber(highlights.byForeign.foreign)}</p>
+            <p>{formatIndianNumber(highlights.byForeign.foreign ?? 0)}</p>
           </div>
         </div>
       </div>
