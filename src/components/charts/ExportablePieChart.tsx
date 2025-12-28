@@ -74,14 +74,7 @@ export default function ExportablePieChart({
     innerRadius: ir,
     outerRadius: or,
     percent,
-  }: {
-    cx: number;
-    cy: number;
-    midAngle: number;
-    innerRadius: number;
-    outerRadius: number;
-    percent: number;
-  }) => {
+  }: any) => {
     if (percent < 0.05) return null;
 
     const RADIAN = Math.PI / 180;

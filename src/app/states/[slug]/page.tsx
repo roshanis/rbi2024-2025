@@ -46,6 +46,10 @@ export default function StatePage() {
     return tourismData.data.find((d) => d.state === stateName);
   }, [stateName]);
 
+  const formatRank = (rank: number | null) => (rank ? `#${rank}` : "N/A");
+  const formatKCr = (value: number | null | undefined) =>
+    value === null || value === undefined ? "N/A" : `₹${(value / 1000).toFixed(1)}K Cr`;
+
   // Calculate rankings
   const rankings = useMemo(() => {
     const gdpRank = [...gdpData.data]
@@ -57,12 +61,17 @@ export default function StatePage() {
     const tourismRank = [...tourismData.data]
       .sort((a, b) => b.total - a.total)
       .findIndex((d) => d.state === stateName) + 1;
-    const bankingRank = [...bankingData.data]
-      .sort((a, b) => b.deposits - a.deposits)
-      .findIndex((d) => d.state === stateName) + 1;
+    const bankingRank = (() => {
+      if (!stateBanking || stateBanking.deposits === null) return null;
+      const bankingIndex = [...bankingData.data]
+        .filter((d) => d.deposits !== null)
+        .sort((a, b) => (b.deposits ?? 0) - (a.deposits ?? 0))
+        .findIndex((d) => d.state === stateName);
+      return bankingIndex === -1 ? null : bankingIndex + 1;
+    })();
 
     return { gdp: gdpRank, exports: exportRank, tourism: tourismRank, banking: bankingRank };
-  }, [stateName]);
+  }, [stateName, stateBanking]);
 
   // Comparison data
   const comparisonData = useMemo(() => {
@@ -169,19 +178,19 @@ export default function StatePage() {
         <h2 className="text-lg font-semibold mb-4">National Rankings</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="text-center">
-            <p className="text-4xl font-bold">#{rankings.gdp}</p>
+            <p className="text-4xl font-bold">{formatRank(rankings.gdp)}</p>
             <p className="text-white/70 text-sm">GDP</p>
           </div>
           <div className="text-center">
-            <p className="text-4xl font-bold">#{rankings.exports}</p>
+            <p className="text-4xl font-bold">{formatRank(rankings.exports)}</p>
             <p className="text-white/70 text-sm">Exports</p>
           </div>
           <div className="text-center">
-            <p className="text-4xl font-bold">#{rankings.banking}</p>
+            <p className="text-4xl font-bold">{formatRank(rankings.banking)}</p>
             <p className="text-white/70 text-sm">Bank Deposits</p>
           </div>
           <div className="text-center">
-            <p className="text-4xl font-bold">#{rankings.tourism}</p>
+            <p className="text-4xl font-bold">{formatRank(rankings.tourism)}</p>
             <p className="text-white/70 text-sm">Tourism</p>
           </div>
         </div>
@@ -338,11 +347,11 @@ export default function StatePage() {
               </div>
               <div className="flex justify-between py-3 border-b border-slate-200/70">
                 <span className="text-slate-600">Total Deposits</span>
-                <span className="font-semibold">₹{(stateBanking.deposits / 1000).toFixed(1)}K Cr</span>
+                <span className="font-semibold">{formatKCr(stateBanking.deposits)}</span>
               </div>
               <div className="flex justify-between py-3 border-b border-slate-200/70">
                 <span className="text-slate-600">Total Credit</span>
-                <span className="font-semibold">₹{(stateBanking.credit / 1000).toFixed(1)}K Cr</span>
+                <span className="font-semibold">{formatKCr(stateBanking.credit)}</span>
               </div>
               <div className="flex justify-between py-3">
                 <span className="text-slate-600">Credit-Deposit Ratio</span>

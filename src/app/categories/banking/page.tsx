@@ -27,6 +27,13 @@ export default function BankingPage() {
   const [selectedMetric, setSelectedMetric] = useState<MetricType>("deposits");
   const [viewMode, setViewMode] = useState<"chart" | "table">("chart");
 
+  const formatNullableCurrency = (value: number | null) =>
+    value === null ? "N/A" : formatCurrency(value);
+  const formatNullableNumber = (value: number | null) =>
+    value === null ? "N/A" : formatIndianNumber(value);
+  const formatNullablePercentage = (value: number | null) =>
+    value === null ? "N/A" : formatPercentage(value);
+
   const stateRegionMap = useMemo(() => {
     const map = new Map<string, string>();
     statesData.states.forEach((s) => map.set(s.name, s.region));
@@ -119,12 +126,16 @@ export default function BankingPage() {
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Top deposits</p>
               <p className="font-semibold text-slate-900">{highlights.byDeposits.state}</p>
-              <p className="text-sm text-slate-500">{formatCurrency(highlights.byDeposits.deposits ?? 0)}</p>
+              <p className="text-sm text-slate-500">
+                {formatNullableCurrency(highlights.byDeposits.deposits)}
+              </p>
             </div>
             <div>
               <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Top branches</p>
               <p className="font-semibold text-slate-900">{highlights.byBranches.state}</p>
-              <p className="text-sm text-slate-500">{formatIndianNumber(highlights.byBranches.branches ?? 0)}</p>
+              <p className="text-sm text-slate-500">
+                {formatNullableNumber(highlights.byBranches.branches)}
+              </p>
             </div>
           </div>
         </div>
@@ -240,22 +251,22 @@ export default function BankingPage() {
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Highest deposits</p>
             <p className="font-semibold text-slate-900">{highlights.byDeposits.state}</p>
-            <p>{formatCurrency(highlights.byDeposits.deposits ?? 0)}</p>
+            <p>{formatNullableCurrency(highlights.byDeposits.deposits)}</p>
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Most branches</p>
             <p className="font-semibold text-slate-900">{highlights.byBranches.state}</p>
-            <p>{formatIndianNumber(highlights.byBranches.branches ?? 0)}</p>
+            <p>{formatNullableNumber(highlights.byBranches.branches)}</p>
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Highest credit</p>
             <p className="font-semibold text-slate-900">{highlights.byCredit.state}</p>
-            <p>{formatCurrency(highlights.byCredit.credit ?? 0)}</p>
+            <p>{formatNullableCurrency(highlights.byCredit.credit)}</p>
           </div>
           <div>
             <p className="text-xs uppercase tracking-[0.2em] text-slate-400">Best CD ratio</p>
             <p className="font-semibold text-slate-900">{highlights.byCdRatio.state}</p>
-            <p>{formatPercentage(highlights.byCdRatio.cdRatio ?? 0)}</p>
+            <p>{formatNullablePercentage(highlights.byCdRatio.cdRatio)}</p>
           </div>
         </div>
       </div>

@@ -150,8 +150,8 @@ export default function IndiaMap({
         >
           <ZoomableGroup zoom={1}>
             <Geographies geography={INDIA_TOPO_URL}>
-              {({ geographies }) =>
-                geographies.map((geo) => {
+              {({ geographies }: any) =>
+                geographies.map((geo: any) => {
                   const geoName = geo.properties.NAME_1 || geo.properties.name;
                   const stateName = getStateName(geoName);
                   const value = dataMap.get(stateName);
@@ -179,7 +179,7 @@ export default function IndiaMap({
                           outline: "none",
                         },
                       }}
-                      onMouseEnter={(evt) => {
+                      onMouseEnter={(evt: any) => {
                         setHoveredState(stateName);
                         if (value !== undefined) {
                           setTooltipContent({

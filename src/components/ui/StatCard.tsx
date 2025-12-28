@@ -4,7 +4,7 @@ import { formatIndianNumber, formatCurrency, formatPercentage } from "@/lib/form
 
 interface StatCardProps {
   title: string;
-  value: number;
+  value: number | null;
   format?: "number" | "currency" | "percentage";
   subtitle?: string;
   change?: number;
@@ -30,6 +30,7 @@ export default function StatCard({
   variant = "default",
 }: StatCardProps) {
   const formattedValue = (() => {
+    if (value === null) return "N/A";
     switch (format) {
       case "currency":
         return formatCurrency(value);
