@@ -47,7 +47,7 @@ export default function BankingPage() {
 
   const chartData = useMemo(() => {
     return [...filteredData]
-      .sort((a, b) => b[selectedMetric] - a[selectedMetric])
+      .sort((a, b) => (b[selectedMetric] ?? 0) - (a[selectedMetric] ?? 0))
       .slice(0, 20)
       .map((d) => ({
         name: d.state.length > 15 ? d.state.substring(0, 12) + "..." : d.state,
@@ -144,11 +144,10 @@ export default function BankingPage() {
                   <button
                     key={key}
                     onClick={() => setSelectedMetric(key)}
-                    className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                      selectedMetric === key
+                    className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${selectedMetric === key
                         ? "bg-[#138808] text-white"
                         : "bg-white/70 text-slate-700 hover:bg-white"
-                    }`}
+                      }`}
                   >
                     {label}
                   </button>
@@ -166,11 +165,10 @@ export default function BankingPage() {
                   <button
                     key={region}
                     onClick={() => setRegionFilter(region)}
-                    className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                      regionFilter === region
+                    className={`px-3 py-1.5 rounded-full text-sm font-medium transition-colors ${regionFilter === region
                         ? "bg-[#0b2d52] text-white"
                         : "bg-white/70 text-slate-700 hover:bg-white"
-                    }`}
+                      }`}
                   >
                     {region}
                   </button>
@@ -187,21 +185,19 @@ export default function BankingPage() {
             <div className="flex gap-1 bg-white/70 rounded-full p-1 border border-slate-200">
               <button
                 onClick={() => setViewMode("chart")}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                  viewMode === "chart"
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${viewMode === "chart"
                     ? "bg-white text-slate-900 shadow-sm"
                     : "text-slate-600 hover:text-slate-900"
-                }`}
+                  }`}
               >
                 Chart
               </button>
               <button
                 onClick={() => setViewMode("table")}
-                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${
-                  viewMode === "table"
+                className={`px-4 py-1.5 rounded-full text-sm font-medium transition-colors ${viewMode === "table"
                     ? "bg-white text-slate-900 shadow-sm"
                     : "text-slate-600 hover:text-slate-900"
-                }`}
+                  }`}
               >
                 Table
               </button>
